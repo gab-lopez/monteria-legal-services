@@ -42,41 +42,37 @@ export default function Navbar() {
         background: "linear-gradient(90deg, #15294a, #b08600, #e7d451)",
       }} />
 
-      {/* Nav principal */}
+      {/* Nav */}
       <div style={{
         maxWidth: "80rem",
         margin: "0 auto",
-        padding: "0 2rem",
-        height: "72px",
+        padding: "0 1.25rem",
+        height: "64px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         borderBottom: scrolled ? "none" : "0.5px solid #eeeeee",
-        transition: "border 0.4s ease",
       }}>
 
         {/* Logo */}
         <Link
           href="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}
+          style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", flexShrink: 0 }}
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
             <Image
               src="/logo-monteria-simple.png"
               alt="Monteria Legal Services"
-              width={40}
-              height={40}
+              width={34}
+              height={34}
               style={{ objectFit: "contain" }}
               priority
             />
           </motion.div>
           <div style={{ lineHeight: 1.2 }}>
             <div style={{
-              fontSize: "1.1rem",
+              fontSize: "1rem",
               fontWeight: "700",
               color: "#15294a",
               letterSpacing: "0.05em",
@@ -85,10 +81,10 @@ export default function Navbar() {
               Monteria
             </div>
             <div style={{
-              fontSize: "0.6rem",
+              fontSize: "0.55rem",
               fontWeight: "600",
               color: "#b08600",
-              letterSpacing: "0.25em",
+              letterSpacing: "0.2em",
               textTransform: "uppercase",
             }}>
               Legal Services
@@ -96,14 +92,13 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop links */}
+        {/* Desktop links — solo visible en md+ */}
         <ul style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "2.5rem",
           listStyle: "none",
           margin: 0,
           padding: 0,
+          gap: "2rem",
+          alignItems: "center",
         }}
           className="hidden md:flex"
         >
@@ -115,12 +110,11 @@ export default function Navbar() {
                   href={link.href}
                   style={{
                     color: isActive ? "#15294a" : "#444444",
-                    fontSize: "0.875rem",
+                    fontSize: "0.85rem",
                     fontWeight: isActive ? "600" : "500",
                     letterSpacing: "0.03em",
                     textDecoration: "none",
-                    transition: "color 0.3s ease",
-                    paddingBottom: "4px",
+                    whiteSpace: "nowrap",
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) e.currentTarget.style.color = "#b08600";
@@ -131,8 +125,6 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
-
-                {/* Línea dorada activa */}
                 {isActive && (
                   <motion.div
                     layoutId="activeLink"
@@ -152,66 +144,46 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* CTA */}
+        {/* Desktop CTA — solo visible en md+ */}
         <div className="hidden md:flex">
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.2 }}
-          >
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
             <Link
               href="/contacto"
               style={{
                 backgroundColor: "#15294a",
                 color: "#ffffff",
-                fontSize: "0.8rem",
+                fontSize: "0.78rem",
                 fontWeight: "600",
-                padding: "0.65rem 1.4rem",
+                padding: "0.6rem 1.2rem",
                 letterSpacing: "0.05em",
                 textDecoration: "none",
                 display: "block",
-                transition: "background 0.3s ease",
+                whiteSpace: "nowrap",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#b08600";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#15294a";
-              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#b08600"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#15294a"; }}
             >
               Consulta Gratuita
             </Link>
           </motion.div>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — solo visible en mobile */}
         <motion.button
           whileTap={{ scale: 0.9 }}
-          style={{ color: "#15294a", background: "none", border: "none", cursor: "pointer" }}
+          style={{ color: "#15294a", background: "none", border: "none", cursor: "pointer", padding: "4px" }}
           className="md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menú"
         >
           <AnimatePresence mode="wait">
             {open ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X size={24} />
+              <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <X size={22} />
               </motion.div>
             ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Menu size={24} />
+              <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <Menu size={22} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -226,18 +198,9 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{
-              overflow: "hidden",
-              backgroundColor: "#ffffff",
-              borderTop: "0.5px solid #eeeeee",
-            }}
+            style={{ overflow: "hidden", backgroundColor: "#ffffff", borderTop: "0.5px solid #eeeeee" }}
           >
-            <div style={{
-              padding: "1.5rem 2rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.25rem",
-            }}>
+            <div style={{ padding: "1.25rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
               {links.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -247,7 +210,15 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    style={{ color: "#444444", fontSize: "0.875rem", fontWeight: "500", textDecoration: "none" }}
+                    style={{
+                      color: pathname === link.href ? "#15294a" : "#444444",
+                      fontSize: "0.95rem",
+                      fontWeight: pathname === link.href ? "600" : "400",
+                      textDecoration: "none",
+                      display: "block",
+                      padding: "0.5rem 0",
+                      borderBottom: "0.5px solid #f0f0f0",
+                    }}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -264,12 +235,13 @@ export default function Navbar() {
                   style={{
                     backgroundColor: "#15294a",
                     color: "#ffffff",
-                    fontSize: "0.8rem",
+                    fontSize: "0.875rem",
                     fontWeight: "600",
-                    padding: "0.65rem 1.4rem",
+                    padding: "0.875rem",
                     textAlign: "center",
                     textDecoration: "none",
                     display: "block",
+                    marginTop: "0.25rem",
                   }}
                   onClick={() => setOpen(false)}
                 >

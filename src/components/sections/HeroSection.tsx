@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16">
 
       {/* Patrón de fondo sutil */}
       <div
