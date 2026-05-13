@@ -96,18 +96,7 @@ export default function HeroSection() {
             Áreas de Práctica
           </Link>
         </motion.div>
-
-        {/* Ubicaciones */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="flex items-center justify-center gap-6 mt-14 text-[#888888] text-xs tracking-[0.2em] uppercase"
-        >
-          <span>Ciudad de Guatemala</span>
-          <span className="w-1 h-1 rounded-full bg-[#b08600]" />
-          <span>Antigua Guatemala</span>
-        </motion.div>
+        
       </div>
 
       {/* Bottom fade */}
