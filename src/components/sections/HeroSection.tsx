@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-16 md:pb-0">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-8 sm:pb-16 md:pb-0">
 
       {/* Patrón de fondo sutil */}
       <div
@@ -32,7 +32,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-10"
+          className="flex justify-center mb-6 sm:mb-10"
         >
           <Image
             src="/logo-monteria.png"
@@ -49,7 +49,7 @@ export default function HeroSection() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mx-auto w-16 h-0.5 bg-[#b08600] mb-8"
+          className="mx-auto w-16 h-0.5 bg-[#b08600] mb-6 sm:mb-8"
         />
 
         {/* Headline */}
@@ -57,7 +57,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#15294a] leading-tight mb-6"
+          className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#15294a] leading-tight mb-4 sm:mb-6"
           style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
         >
           Soluciones Legales{" "}
@@ -70,7 +70,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-[#888888] text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-[#888888] text-base sm:text-xl max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed"
         >
           El respaldo multidisciplinario que su empresa y sus proyectos necesitan en Guatemala.  Dirigidos por una visión de negocios real y estratégica, con la óptica de la administración y perspectiva gerencial.
         </motion.p>
@@ -90,12 +90,12 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/servicios"
-            className="border border-[#15294a] text-[#15294a] hover:bg-[#15294a] hover:text-white font-semibold px-8 py-3.5 tracking-wide transition-all duration-300"
+            className="hidden sm:inline-block border border-[#15294a] text-[#15294a] hover:bg-[#15294a] hover:text-white font-semibold px-8 py-3.5 tracking-wide transition-all duration-300"
           >
             Áreas de Práctica
           </Link>
         </motion.div>
-        
+
       </div>
 
       {/* Bottom fade */}
