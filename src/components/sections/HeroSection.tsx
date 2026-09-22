@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -71,9 +72,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-[#888888] text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Firma de abogados guatemalteca con presencia en Ciudad de Guatemala
-          y Antigua Guatemala. Comprometidos con la excelencia jurídica y
-          la defensa de sus intereses.
+          El respaldo multidisciplinario que su empresa y sus proyectos necesitan en Guatemala.  Dirigidos por una visión de negocios real y estratégica, con la óptica de la administración y perspectiva gerencial.
         </motion.p>
 
         {/* Botones */}
@@ -101,6 +100,22 @@ export default function HeroSection() {
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
+
+      {/* Flecha invitando a scrollear */}
+      <motion.a
+        href="#areas"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById("areas")?.scrollIntoView({ behavior: "smooth" });
+        }}
+        aria-label="Ir a Áreas de Práctica"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center w-11 h-11 rounded-full text-[#15294a] hover:text-[#b08600] transition-colors duration-300"
+        style={{ filter: "drop-shadow(0 4px 8px rgba(21,41,74,0.35))" }}
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <ChevronDown size={26} />
+      </motion.a>
     </section>
   );
 }

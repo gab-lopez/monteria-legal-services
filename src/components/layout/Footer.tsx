@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
           </div>
           <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(255,255,255,0.5)", maxWidth: "280px", marginTop: "0.5rem" }}>
-            Firma de abogados guatemalteca comprometida con la excelencia jurídica y la defensa de sus intereses.
+            Firma de abogados guatemalteca comprometida con la excelencia jurídica.
           </p>
         </div>
 

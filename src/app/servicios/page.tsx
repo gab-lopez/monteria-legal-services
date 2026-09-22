@@ -2,8 +2,17 @@
 
 import { motion } from "framer-motion";
 import { practiceAreas } from "@/data/services";
-import { Scale, ArrowRight } from "lucide-react";
+import { Briefcase, Stamp, Landmark, Handshake, Scale, ArrowRight } from "lucide-react";
 import Link from "next/link";
+
+// Ícono por área, igual que en PracticeAreasSection. Si se agrega una
+// nueva área sin ícono asignado aquí, se usa Scale como respaldo.
+const areaIcons: Record<string, typeof Scale> = {
+  "empresaria-compliance": Briefcase,
+  "regulatorio-marcas": Stamp,
+  "patrimonial-sucesiones": Landmark,
+  "contratos-solucion-conflictos": Handshake,
+};
 
 export default function ServiciosPage() {
   return (
@@ -30,7 +39,9 @@ export default function ServiciosPage() {
 
         {/* Grid */}
         <div className="flex flex-col gap-8">
-          {practiceAreas.map((area, i) => (
+          {practiceAreas.map((area, i) => {
+            const Icon = areaIcons[area.id] ?? Scale;
+            return (
             <motion.div
               key={area.id}
               initial={{ opacity: 0, y: 24 }}
@@ -43,7 +54,7 @@ export default function ServiciosPage() {
               <div className="bg-[#f8f7f4] p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-200 group-hover:border-[#b08600]/30 transition-colors duration-300">
                 <div>
                   <div className="w-12 h-12 border border-[#b08600]/30 flex items-center justify-center mb-6 group-hover:bg-[#b08600] group-hover:border-[#b08600] transition-all duration-300">
-                    <Scale size={20} className="text-[#b08600] group-hover:text-white transition-colors duration-300" />
+                    <Icon size={20} className="text-[#b08600] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <div className="w-8 h-0.5 bg-[#e7d451] mb-4" />
                   <h2
@@ -59,7 +70,7 @@ export default function ServiciosPage() {
               </div>
 
               {/* Center — descripción */}
-              <div className="p-8 border-b md:border-b-0 md:border-r border-slate-200 group-hover:border-[#b08600]/30 transition-colors duration-300">
+              <div className="md:col-span-2 p-8">
                 <h3 className="text-xs font-semibold text-[#b08600] uppercase tracking-[0.2em] mb-4">
                   Descripción
                 </h3>
@@ -67,23 +78,9 @@ export default function ServiciosPage() {
                   {area.description}
                 </p>
               </div>
-
-              {/* Right — servicios */}
-              <div className="p-8">
-                <h3 className="text-xs font-semibold text-[#b08600] uppercase tracking-[0.2em] mb-4">
-                  Servicios incluidos
-                </h3>
-                <ul className="flex flex-col gap-2.5">
-                  {area.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-[#555555]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#b08600] shrink-0 mt-1.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA */}
