@@ -7,7 +7,7 @@ import { Phone } from "lucide-react";
 export default function TeamSection() {
   return (
     <section
-      className="py-24 bg-[#f8f7f4] min-h-screen flex items-center"
+      className="py-16 sm:py-20 bg-[#f8f7f4] scroll-mt-20"
       id="equipo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">

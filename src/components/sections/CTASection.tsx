@@ -6,7 +6,7 @@ import { Phone, Mail } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-[#15294a] min-h-screen flex items-center relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-[#15294a] relative overflow-hidden">
       {/* Patrón decorativo */}
       <div
         className="absolute inset-0 opacity-5"

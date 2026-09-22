@@ -15,7 +15,7 @@ const areaIcons: Record<string, typeof Scale> = {
 
 export default function PracticeAreasSection() {
   return (
-    <section className="py-16 bg-[#15294a] min-h-screen flex items-center" id="areas">
+    <section className="py-16 sm:py-20 bg-[#15294a] scroll-mt-20" id="areas">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Header */}
