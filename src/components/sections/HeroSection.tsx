@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-8 sm:pb-16 md:pb-0">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-8 sm:pb-16 md:pt-24 md:pb-28">
 
       {/* Patrón de fondo sutil */}
       <div
