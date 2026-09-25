@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ConstructionNotice from "@/components/layout/ConstructionNotice";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
 
 const dmSans = DM_Sans({
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ConstructionNotice />
       </body>
     </html>
   );

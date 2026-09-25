@@ -14,8 +14,8 @@ export const team: TeamMember[] = [
     name: "Jeaneth Divas",
     role: "Abogada & Notaria",
     phone: "+(502) 5865 6566",
-    bio: "Especialista con amplia trayectoria en litigios civiles y mercantiles. Comprometida con brindar soluciones legales precisas y efectivas para cada cliente.",
-    specialties: ["Derecho Civil", "Derecho Mercantil", "Notariado"],
+    bio: "Especialista con amplia trayectoria en Derecho Mercantil, Civil, Marcas y Sociedades Offshore & Fundaciones. Comprometida con brindar soluciones legales, precisas y efectivas para cada cliente, en especial desde la prevención y mitigación de riesgos legales. Negociación extrajudicial previo litigios.",
+    specialties: ["Derecho Mercantil", "Derecho Civil", "Marcas", "Sociedades Offshore & Fundaciones", "Notariado"],
     image: "/team/jeaneth-divas.jpg",
   },
   {
